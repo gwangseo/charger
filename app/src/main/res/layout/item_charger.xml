@@ -1,0 +1,77 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="charger"
+            type="com.seoul.charger.CHARGERSTTS" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/statName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATNM}" />
+
+        <TextView
+            android:id="@+id/statAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATADDR}" />
+
+        <TextView
+            android:id="@+id/statId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATID}" />
+
+        <TextView
+            android:id="@+id/statKindDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATKINDDETAIL}" />
+
+        <TextView
+            android:id="@+id/statLimitDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATLIMITDETAIL}" />
+
+        <TextView
+            android:id="@+id/statLimitYN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATLIMITYN}" />
+
+        <TextView
+            android:id="@+id/statParkPay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATPARKPAY}" />
+
+        <TextView
+            android:id="@+id/statUseTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATUSETIME}" />
+
+        <TextView
+            android:id="@+id/statX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATX}" />
+
+        <TextView
+            android:id="@+id/statY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{charger.sTATY}" />
+        <!-- Add other fields as necessary -->
+
+    </LinearLayout>
+</layout>

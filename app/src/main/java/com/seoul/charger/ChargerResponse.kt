@@ -1,0 +1,430 @@
+package com.seoul.charger
+
+
+import com.squareup.moshi.Json
+
+data class ChargerResponse(
+    @field:Json(name = "CITYDATA")
+    val cITYDATA: CITYDATA?,
+    @field:Json(name = "list_total_count")
+    val listTotalCount: Int?,
+    @field:Json(name = "RESULT")
+    val rESULT: RESULT?
+)
+
+data class AVGROADDATA(
+    @field:Json(name = "ROAD_MSG")
+    val rOADMSG: String?,
+    @field:Json(name = "ROAD_TRAFFIC_IDX")
+    val rOADTRAFFICIDX: String?,
+    @field:Json(name = "ROAD_TRAFFIC_SPD")
+    val rOADTRAFFICSPD: Int?,
+    @field:Json(name = "ROAD_TRFFIC_TIME")
+    val rOADTRFFICTIME: String?
+)
+
+data class BUSDETAIL(
+    @field:Json(name = "RTE_ARRV_STN_1")
+    val rTEARRVSTN1: String?,
+    @field:Json(name = "RTE_ARRV_STN_2")
+    val rTEARRVSTN2: String?,
+    @field:Json(name = "RTE_ARRV_TM_1")
+    val rTEARRVTM1: String?,
+    @field:Json(name = "RTE_ARRV_TM_2")
+    val rTEARRVTM2: String?,
+    @field:Json(name = "RTE_CONGEST_1")
+    val rTECONGEST1: String?,
+    @field:Json(name = "RTE_CONGEST_2")
+    val rTECONGEST2: String?,
+    @field:Json(name = "RTE_ID")
+    val rTEID: String?,
+    @field:Json(name = "RTE_NM")
+    val rTENM: String?,
+    @field:Json(name = "RTE_SECT")
+    val rTESECT: String?,
+    @field:Json(name = "RTE_STN_NM")
+    val rTESTNNM: String?
+)
+
+data class BUSSTNSTTS(
+    @field:Json(name = "BUS_ARS_ID")
+    val bUSARSID: String?,
+    @field:Json(name = "BUS_DETAIL")
+    val bUSDETAIL: List<BUSDETAIL?>?,
+    @field:Json(name = "BUS_RESULT_MSG")
+    val bUSRESULTMSG: String?,
+    @field:Json(name = "BUS_STN_ID")
+    val bUSSTNID: String?,
+    @field:Json(name = "BUS_STN_NM")
+    val bUSSTNNM: String?,
+    @field:Json(name = "BUS_STN_X")
+    val bUSSTNX: String?,
+    @field:Json(name = "BUS_STN_Y")
+    val bUSSTNY: String?
+)
+
+data class CHARGERDETAIL(
+    @field:Json(name = "CHARGER_ID")
+    val cHARGERID: String?,
+    @field:Json(name = "CHARGER_STAT")
+    val cHARGERSTAT: String?,
+    @field:Json(name = "CHARGER_TYPE")
+    val cHARGERTYPE: String?,
+    @field:Json(name = "LASTTEDT")
+    val lASTTEDT: String?,
+    @field:Json(name = "LASTTSDT")
+    val lASTTSDT: String?,
+    @field:Json(name = "METHOD")
+    val mETHOD: String?,
+    @field:Json(name = "NOWTSDT")
+    val nOWTSDT: String?,
+    @field:Json(name = "OUTPUT")
+    val oUTPUT: String?,
+    @field:Json(name = "STATUPDDT")
+    val sTATUPDDT: Any?
+)
+
+data class CHARGERSTTS(
+    @field:Json(name = "CHARGER_DETAIL")
+    val cHARGERDETAIL: List<CHARGERDETAIL?>?,
+    @field:Json(name = "STAT_ADDR")
+    val sTATADDR: String?,
+    @field:Json(name = "STAT_ID")
+    val sTATID: String?,
+    @field:Json(name = "STAT_KINDDETAIL")
+    val sTATKINDDETAIL: String?,
+    @field:Json(name = "STAT_LIMITDETAIL")
+    val sTATLIMITDETAIL: String?,
+    @field:Json(name = "STAT_LIMITYN")
+    val sTATLIMITYN: String?,
+    @field:Json(name = "STAT_NM")
+    val sTATNM: String?,
+    @field:Json(name = "STAT_PARKPAY")
+    val sTATPARKPAY: String?,
+    @field:Json(name = "STAT_USETIME")
+    val sTATUSETIME: String?,
+    @field:Json(name = "STAT_X")
+    val sTATX: String?,
+    @field:Json(name = "STAT_Y")
+    val sTATY: String?
+)
+
+data class CITYDATA(
+    @field:Json(name = "ACDNT_CNTRL_STTS")
+    val aCDNTCNTRLSTTS: List<Any>?,
+    @field:Json(name = "AREA_CD")
+    val aREACD: String?,
+    @field:Json(name = "AREA_NM")
+    val aREANM: String?,
+    @field:Json(name = "BUS_STN_STTS")
+    val bUSSTNSTTS: List<BUSSTNSTTS>?,
+    @field:Json(name = "CHARGER_STTS")
+    val cHARGERSTTS: List<CHARGERSTTS>?,
+    @field:Json(name = "COVID_19_STTS")
+    val cOVID19STTS: Any?,
+    @field:Json(name = "EVENT_STTS")
+    val eVENTSTTS: List<EVENTSTTS>?,
+    @field:Json(name = "LIVE_PPLTN_STTS")
+    val lIVEPPLTNSTTS: List<LIVEPPLTNSTTS>?,
+    @field:Json(name = "PRK_STTS")
+    val pRKSTTS: List<PRKSTTS>?,
+    @field:Json(name = "ROAD_TRAFFIC_STTS")
+    val rOADTRAFFICSTTS: ROADTRAFFICSTTS?,
+    @field:Json(name = "SBIKE_STTS")
+    val sBIKESTTS: List<SBIKESTTS>?,
+    @field:Json(name = "SUB_STTS")
+    val sUBSTTS: List<SUBSTTS>?,
+    @field:Json(name = "WEATHER_STTS")
+    val wEATHERSTTS: List<WEATHERSTTS>?
+)
+
+data class EVENTSTTS(
+    @field:Json(name = "EVENT_ETC_DETAIL")
+    val eVENTETCDETAIL: String?,
+    @field:Json(name = "EVENT_NM")
+    val eVENTNM: String?,
+    @field:Json(name = "EVENT_PERIOD")
+    val eVENTPERIOD: String?,
+    @field:Json(name = "EVENT_PLACE")
+    val eVENTPLACE: String?,
+    @field:Json(name = "EVENT_X")
+    val eVENTX: Double?,
+    @field:Json(name = "EVENT_Y")
+    val eVENTY: Double?,
+    @field:Json(name = "PAY_YN")
+    val pAYYN: Any?,
+    @field:Json(name = "THUMBNAIL")
+    val tHUMBNAIL: String?,
+    @field:Json(name = "URL")
+    val uRL: String?
+)
+data class FCST24HOURS(
+    @field:Json(name = "FCST_DT")
+    val fCSTDT: String?,
+    @field:Json(name = "PRECIPITATION")
+    val pRECIPITATION: String?,
+    @field:Json(name = "PRECPT_TYPE")
+    val pRECPTTYPE: String?,
+    @field:Json(name = "RAIN_CHANCE")
+    val rAINCHANCE: String?,
+    @field:Json(name = "SKY_STTS")
+    val sKYSTTS: String?,
+    @field:Json(name = "TEMP")
+    val tEMP: String?
+)
+
+data class FCSTPPLTN(
+    @field:Json(name = "FCST_CONGEST_LVL")
+    val fCSTCONGESTLVL: String?,
+    @field:Json(name = "FCST_PPLTN_MAX")
+    val fCSTPPLTNMAX: String?,
+    @field:Json(name = "FCST_PPLTN_MIN")
+    val fCSTPPLTNMIN: String?,
+    @field:Json(name = "FCST_TIME")
+    val fCSTTIME: String?
+)
+data class LIVEPPLTNSTTS(
+    @field:Json(name = "AREA_CONGEST_LVL")
+    val aREACONGESTLVL: String?,
+    @field:Json(name = "AREA_CONGEST_MSG")
+    val aREACONGESTMSG: String?,
+    @field:Json(name = "AREA_PPLTN_MAX")
+    val aREAPPLTNMAX: String?,
+    @field:Json(name = "AREA_PPLTN_MIN")
+    val aREAPPLTNMIN: String?,
+    @field:Json(name = "FCST_PPLTN")
+    val fCSTPPLTN: List<FCSTPPLTN?>?,
+    @field:Json(name = "FCST_YN")
+    val fCSTYN: String?,
+    @field:Json(name = "FEMALE_PPLTN_RATE")
+    val fEMALEPPLTNRATE: String?,
+    @field:Json(name = "MALE_PPLTN_RATE")
+    val mALEPPLTNRATE: String?,
+    @field:Json(name = "NON_RESNT_PPLTN_RATE")
+    val nONRESNTPPLTNRATE: String?,
+    @field:Json(name = "PPLTN_RATE_0")
+    val pPLTNRATE0: String?,
+    @field:Json(name = "PPLTN_RATE_10")
+    val pPLTNRATE10: String?,
+    @field:Json(name = "PPLTN_RATE_20")
+    val pPLTNRATE20: String?,
+    @field:Json(name = "PPLTN_RATE_30")
+    val pPLTNRATE30: String?,
+    @field:Json(name = "PPLTN_RATE_40")
+    val pPLTNRATE40: String?,
+    @field:Json(name = "PPLTN_RATE_50")
+    val pPLTNRATE50: String?,
+    @field:Json(name = "PPLTN_RATE_60")
+    val pPLTNRATE60: String?,
+    @field:Json(name = "PPLTN_RATE_70")
+    val pPLTNRATE70: String?,
+    @field:Json(name = "PPLTN_TIME")
+    val pPLTNTIME: String?,
+    @field:Json(name = "REPLACE_YN")
+    val rEPLACEYN: String?,
+    @field:Json(name = "RESNT_PPLTN_RATE")
+    val rESNTPPLTNRATE: String?
+)
+
+data class NEWSLIST(
+    @field:Json(name = "ANNOUNCE_TIME")
+    val aNNOUNCETIME: String?,
+    @field:Json(name = "CANCEL_YN")
+    val cANCELYN: String?,
+    @field:Json(name = "COMMAND")
+    val cOMMAND: String?,
+    @field:Json(name = "WARN_MSG")
+    val wARNMSG: String?,
+    @field:Json(name = "WARN_STRESS")
+    val wARNSTRESS: String?,
+    @field:Json(name = "WARN_VAL")
+    val wARNVAL: String?
+)
+
+data class PRKSTTS(
+    @field:Json(name = "ADD_RATES")
+    val aDDRATES: String?,
+    @field:Json(name = "ADDRESS")
+    val aDDRESS: String?,
+    @field:Json(name = "ADD_TIME_RATES")
+    val aDDTIMERATES: String?,
+    @field:Json(name = "CPCTY")
+    val cPCTY: String?,
+    @field:Json(name = "CUR_PRK_CNT")
+    val cURPRKCNT: String?,
+    @field:Json(name = "CUR_PRK_TIME")
+    val cURPRKTIME: String?,
+    @field:Json(name = "CUR_PRK_YN")
+    val cURPRKYN: String?,
+    @field:Json(name = "LAT")
+    val lAT: String?,
+    @field:Json(name = "LNG")
+    val lNG: String?,
+    @field:Json(name = "PAY_YN")
+    val pAYYN: String?,
+    @field:Json(name = "PRK_CD")
+    val pRKCD: String?,
+    @field:Json(name = "PRK_NM")
+    val pRKNM: String?,
+    @field:Json(name = "RATES")
+    val rATES: String?,
+    @field:Json(name = "ROAD_ADDR")
+    val rOADADDR: String?,
+    @field:Json(name = "TIME_RATES")
+    val tIMERATES: String?
+)
+
+data class RESULT(
+    @field:Json(name = "RESULT.CODE")
+    val rESULTCODE: String?,
+    @field:Json(name = "RESULT.MESSAGE")
+    val rESULTMESSAGE: String?
+)
+
+data class ROADTRAFFICSTTS(
+    @field:Json(name = "AVG_ROAD_DATA")
+    val aVGROADDATA: AVGROADDATA?,
+    @field:Json(name = "ROAD_TRAFFIC_STTS")
+    val rOADTRAFFICSTTS: List<ROADTRAFFICSTTSX>?
+)
+
+data class ROADTRAFFICSTTSX(
+    @field:Json(name = "DIST")
+    val dIST: String?,
+    @field:Json(name = "END_ND_CD")
+    val eNDNDCD: String?,
+    @field:Json(name = "END_ND_NM")
+    val eNDNDNM: String?,
+    @field:Json(name = "END_ND_XY")
+    val eNDNDXY: String?,
+    @field:Json(name = "IDX")
+    val iDX: String?,
+    @field:Json(name = "LINK_ID")
+    val lINKID: String?,
+    @field:Json(name = "ROAD_NM")
+    val rOADNM: String?,
+    @field:Json(name = "SPD")
+    val sPD: Double?,
+    @field:Json(name = "START_ND_CD")
+    val sTARTNDCD: String?,
+    @field:Json(name = "START_ND_NM")
+    val sTARTNDNM: String?,
+    @field:Json(name = "START_ND_XY")
+    val sTARTNDXY: String?,
+    @field:Json(name = "XYLIST")
+    val xYLIST: String?
+)
+
+data class SBIKESTTS(
+    @field:Json(name = "SBIKE_PARKING_CNT")
+    val sBIKEPARKINGCNT: String?,
+    @field:Json(name = "SBIKE_RACK_CNT")
+    val sBIKERACKCNT: String?,
+    @field:Json(name = "SBIKE_SHARED")
+    val sBIKESHARED: String?,
+    @field:Json(name = "SBIKE_SPOT_ID")
+    val sBIKESPOTID: String?,
+    @field:Json(name = "SBIKE_SPOT_NM")
+    val sBIKESPOTNM: String?,
+    @field:Json(name = "SBIKE_X")
+    val sBIKEX: Double?,
+    @field:Json(name = "SBIKE_Y")
+    val sBIKEY: Double?
+)
+
+data class SUBDETAIL(
+    @field:Json(name = "SUB_ARMG1")
+    val sUBARMG1: String?,
+    @field:Json(name = "SUB_ARMG2")
+    val sUBARMG2: String?,
+    @field:Json(name = "SUB_ARVINFO")
+    val sUBARVINFO: String?,
+    @field:Json(name = "SUB_ARVTIME")
+    val sUBARVTIME: String?,
+    @field:Json(name = "SUB_BF_STN")
+    val sUBBFSTN: String?,
+    @field:Json(name = "SUB_DIR")
+    val sUBDIR: String?,
+    @field:Json(name = "SUB_LINE")
+    val sUBLINE: String?,
+    @field:Json(name = "SUB_NT_STN")
+    val sUBNTSTN: String?,
+    @field:Json(name = "SUB_ORD")
+    val sUBORD: String?,
+    @field:Json(name = "SUB_ROUTE_NM")
+    val sUBROUTENM: String?,
+    @field:Json(name = "SUB_TERMINAL")
+    val sUBTERMINAL: String?
+)
+
+data class SUBSTTS(
+    @field:Json(name = "SUB_DETAIL")
+    val sUBDETAIL: List<SUBDETAIL?>?,
+    @field:Json(name = "SUB_STN_JIBUN")
+    val sUBSTNJIBUN: String?,
+    @field:Json(name = "SUB_STN_LINE")
+    val sUBSTNLINE: String?,
+    @field:Json(name = "SUB_STN_NM")
+    val sUBSTNNM: String?,
+    @field:Json(name = "SUB_STN_RADDR")
+    val sUBSTNRADDR: String?,
+    @field:Json(name = "SUB_STN_X")
+    val sUBSTNX: String?,
+    @field:Json(name = "SUB_STN_Y")
+    val sUBSTNY: String?
+)
+
+data class WEATHERSTTS(
+    @field:Json(name = "AIR_IDX")
+    val aIRIDX: String?,
+    @field:Json(name = "AIR_IDX_MAIN")
+    val aIRIDXMAIN: String?,
+    @field:Json(name = "AIR_IDX_MVL")
+    val aIRIDXMVL: String?,
+    @field:Json(name = "AIR_MSG")
+    val aIRMSG: String?,
+    @field:Json(name = "FCST24HOURS")
+    val fCST24HOURS: List<FCST24HOURS?>?,
+    @field:Json(name = "HUMIDITY")
+    val hUMIDITY: String?,
+    @field:Json(name = "MAX_TEMP")
+    val mAXTEMP: String?,
+    @field:Json(name = "MIN_TEMP")
+    val mINTEMP: String?,
+    @field:Json(name = "NEWS_LIST")
+    val nEWSLIST: List<NEWSLIST?>?,
+    @field:Json(name = "PCP_MSG")
+    val pCPMSG: String?,
+    @field:Json(name = "PM10")
+    val pM10: String?,
+    @field:Json(name = "PM10_INDEX")
+    val pM10INDEX: String?,
+    @field:Json(name = "PM25")
+    val pM25: String?,
+    @field:Json(name = "PM25_INDEX")
+    val pM25INDEX: String?,
+    @field:Json(name = "PRECIPITATION")
+    val pRECIPITATION: String?,
+    @field:Json(name = "PRECPT_TYPE")
+    val pRECPTTYPE: String?,
+    @field:Json(name = "SENSIBLE_TEMP")
+    val sENSIBLETEMP: String?,
+    @field:Json(name = "SUNRISE")
+    val sUNRISE: String?,
+    @field:Json(name = "SUNSET")
+    val sUNSET: String?,
+    @field:Json(name = "TEMP")
+    val tEMP: String?,
+    @field:Json(name = "UV_INDEX")
+    val uVINDEX: String?,
+    @field:Json(name = "UV_INDEX_LVL")
+    val uVINDEXLVL: String?,
+    @field:Json(name = "UV_MSG")
+    val uVMSG: String?,
+    @field:Json(name = "WEATHER_TIME")
+    val wEATHERTIME: String?,
+    @field:Json(name = "WIND_DIRCT")
+    val wINDDIRCT: String?,
+    @field:Json(name = "WIND_SPD")
+    val wINDSPD: String?
+)
